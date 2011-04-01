@@ -17,15 +17,15 @@ Obviously, you need [Vagrant](http://www.vagrantup.com/), which in turn requires
 
 ## Download and install a base image
 
-`$ vagrant box add base http://files.vagrantup.com/lucid32.box`
+    $ vagrant box add base http://files.vagrantup.com/lucid32.box
 
 This example uses the default Ubuntu image from the Vagrant project, although you can use other Ubuntu boxes if you like. If you do not name the box "base", you will later on need to adapt the Vagrantfile in the project root directory.
 
 ## Setup a working directory and start your new environment
 
-`$ git clone git://github.com/meandmymonkey/sf2-vagrant.git mydir
-$ cd mydir
-$ vagrant up`
+    $ git clone git://github.com/meandmymonkey/sf2-vagrant.git mydir
+    $ cd mydir
+    $ vagrant up
 
 Depending on the versions of the box and your VirtualBox installation, you might see a notice that the guest additions of the box do not match the version of VirtualBox you are using. If you encounter any problems, you might want to install up to date guest additions on your box once running and [repackage it for use with Vagrant](http://vagrantup.com/docs/getting-started/packaging.html).
 
@@ -51,12 +51,12 @@ The setup will configure MySQL with a user/password of root/root. PhpMyAdmin is 
 
 Connect to your virtual machine:
 
-`$ vagrant ssh`
+    $ vagrant ssh
 
 Change to your project directory and launch the Symfony shell:
 
-`vagrant@vagrantup:~$ cd /vagrant/project
-vagrant@vagrantup:~$ ./app/console -s`
+    vagrant@vagrantup:~$ cd /vagrant/project
+    vagrant@vagrantup:~$ ./app/console -s
 
 ## Notes
 
