@@ -17,9 +17,9 @@ Obviously, you need [Vagrant](http://www.vagrantup.com/), which in turn requires
 
 ## Download and install a base image
 
-`$ vagrant box add lucid32 http://files.vagrantup.com/lucid32.box`
+`$ vagrant box add base http://files.vagrantup.com/lucid32.box`
 
-This example uses the default ubuntu image from the Vagrant project, although you can use other Ubuntu boxes if you like. If you do not name the box `lucid32`, you will need to adapt the Vagrantfile in the project root directory.
+This example uses the default ubuntu image from the Vagrant project, although you can use other Ubuntu boxes if you like. If you do not name the box `base`, you will need to adapt the Vagrantfile in the project root directory.
 
 ## Setup a working directory and start your new environment
 
