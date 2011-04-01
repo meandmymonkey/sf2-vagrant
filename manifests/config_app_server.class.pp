@@ -69,9 +69,17 @@ class config_app_server
 
   file 
   {
+    'system.logdir':
+      path    => '/vagrant/log',
+      ensure  => directory
+  }
+
+  file 
+  {
     'apache.logdir':
       path    => '/vagrant/log/apache2',
-      ensure  => directory
+      ensure  => directory,
+      require => File['system.logdir']
   }
 
 }
