@@ -35,7 +35,7 @@ If you prefer a clean URL, you might want to map `33.33.33.100` to a local domai
 
 ### Webserver
 
-Vagrant will create to additional directories:
+Vagrant will create two additional directories:
 
 `mydir/log/apache2` for Apache logs and `mydir/project` for your actual project files
 
