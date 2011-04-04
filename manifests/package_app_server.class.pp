@@ -57,6 +57,13 @@ class package_app_server
 
   package
   {
+    'php5-curl':
+      ensure  => present,
+      require => Package['php5']
+  }
+
+  package
+  {
     'php5-sqlite':
       ensure  => present,
       require => Package['php5']
