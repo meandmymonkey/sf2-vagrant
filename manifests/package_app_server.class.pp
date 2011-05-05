@@ -95,7 +95,7 @@ class package_app_server
     'pear.tmpdirfix.prepare':
       ensure  => directory,
       path    => '/tmp/pear',
-      require => Package['php5-cli']
+      require => Package['php-pear']
   }
 
   file
@@ -111,7 +111,7 @@ class package_app_server
   {
     'pear.upgrade':
       path => '/bin:/usr/bin:/usr/sbin',
-      command => 'pear upgrade PEAR',
+      command => 'pear upgrade',
       require => File['pear.tmpdirfix']
   }
 
@@ -147,7 +147,7 @@ class package_app_server
     'phpunit.install':
       unless => 'pear info phpunit/PHPUnit',
       path => '/bin:/usr/bin:/usr/sbin',
-      command => 'pear install phpunit/PHPUnit --alldeps',
+      command => 'pear install --alldeps phpunit/PHPUnit',
       require => Exec['phpunit.prepare3']
   }
 
