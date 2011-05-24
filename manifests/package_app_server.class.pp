@@ -95,7 +95,7 @@ class package_app_server
     'pear.tmpdirfix.prepare':
       ensure  => directory,
       path    => '/tmp/pear',
-      require => Package['php5-cli']
+      require => Package['php-pear']
   }
 
   file
