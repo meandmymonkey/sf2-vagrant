@@ -95,7 +95,7 @@ class package_app_server
     'pear.tmpdirfix.prepare':
       ensure  => directory,
       path    => '/tmp/pear',
-      require => Package['php-pear']
+      require => Package['php5-cli']
   }
 
   file
@@ -111,14 +111,14 @@ class package_app_server
   {
     'pear.upgrade':
       path => '/bin:/usr/bin:/usr/sbin',
-      command => 'pear upgrade',
+      command => 'pear upgrade PEAR',
       require => File['pear.tmpdirfix']
   }
 
   exec
   {
     'phpunit.prepare1':
-      unless => 'pear channel-info pear.phpunit.de',
+      creates => '/usr/share/php/.channels/pear.phpunit.de.reg',
       path => '/bin:/usr/bin:/usr/sbin',
       command => 'pear channel-discover pear.phpunit.de',
       require => Exec['pear.upgrade']
@@ -127,7 +127,7 @@ class package_app_server
   exec
   {
     'phpunit.prepare2':
-      unless => 'pear channel-info pear.symfony-project.com',
+      creates => '/usr/share/php/.channels/pear.symfony-project.com.reg',
       path => '/bin:/usr/bin:/usr/sbin',
       command => 'pear channel-discover pear.symfony-project.com',
       require => Exec['phpunit.prepare1']
@@ -136,7 +136,7 @@ class package_app_server
   exec
   {
     'phpunit.prepare3':
-      unless => 'pear channel-info components.ez.no',
+      creates => '/usr/share/php/.channels/components.ez.no.reg',
       path => '/bin:/usr/bin:/usr/sbin',
       command => 'pear channel-discover components.ez.no',
       require => Exec['phpunit.prepare2']
@@ -145,9 +145,9 @@ class package_app_server
   exec
   {
     'phpunit.install':
-      unless => 'pear info phpunit/PHPUnit',
+      creates => '/usr/bin/phpunit',
       path => '/bin:/usr/bin:/usr/sbin',
-      command => 'pear install --alldeps phpunit/PHPUnit',
+      command => 'pear install phpunit/PHPUnit --alldeps',
       require => Exec['phpunit.prepare3']
   }
 
