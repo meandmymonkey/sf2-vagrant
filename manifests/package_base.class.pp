@@ -2,6 +2,11 @@
 class package_base
 {
 
+  group {
+    "puppet": ensure => "present";
+  }
+
+
   exec
   {
     'init':
