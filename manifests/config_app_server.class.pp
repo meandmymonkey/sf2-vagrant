@@ -60,24 +60,31 @@ class config_app_server
       command => 'mysqladmin -uroot password root'
   }
 
-  file 
+  file
   {
     'project.basedir':
       path    => '/vagrant/project',
       ensure  => directory
   }
 
-  file 
+  file
   {
-    'system.logdir':
-      path    => '/vagrant/log',
+    'project.webdir':
+      path    => '/vagrant/project/web',
       ensure  => directory
   }
 
-  file 
+  file
+  {
+    'system.logdir':
+      path    => '/vagrant/logs',
+      ensure  => directory
+  }
+
+  file
   {
     'apache.logdir':
-      path    => '/vagrant/log/apache2',
+      path    => '/vagrant/logs/apache2',
       ensure  => directory,
       require => File['system.logdir']
   }

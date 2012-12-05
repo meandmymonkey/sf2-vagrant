@@ -37,7 +37,7 @@ If you prefer a clean URL, you might want to map `33.33.33.100` to a local domai
 
 Vagrant will create two additional directories:
 
-`mydir/log/apache2` for Apache logs and `mydir/project` for your actual project files
+`mydir/logs/apache2` for Apache logs and `mydir/project` for your actual project files
 
 Drop your Symfony 2 app into the `mydir/project` directory. Apache will use `mydir/project/web` as the web root.
 

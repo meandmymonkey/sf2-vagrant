@@ -14,12 +14,12 @@
                 allow from all
         </Directory>
 
-        ErrorLog /vagrant/log/apache2/error.log
+        ErrorLog /vagrant/logs/apache2/error.log
 
         # Possible values include: debug, info, notice, warn, error, crit,
         # alert, emerg.
         LogLevel warn
 
-        CustomLog /vagrant/log/apache2/access.log combined
+        CustomLog /vagrant/logs/apache2/access.log combined
 
 </VirtualHost>
