@@ -28,4 +28,10 @@ class package_dev_tools
       ensure  => present
   }
 
+  package
+  {
+    'phpunit':
+      ensure  => present,
+      require => Package['php5']
+  }
 }
