@@ -19,7 +19,13 @@ class package_base
   package
   {
     'puppet':
-      ensure  => present
+      ensure => present
+  }
+
+  package
+  {
+    'curl':
+      ensure => present
   }
 
 }
