@@ -16,4 +16,10 @@ class package_base
       require => Exec['init']
   }
 
+  package
+  {
+    'puppet':
+      ensure  => present
+  }
+
 }
