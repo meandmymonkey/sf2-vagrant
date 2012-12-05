@@ -2,6 +2,7 @@
         ServerAdmin webmaster@localhost
 
         DocumentRoot /vagrant/project/web
+
         <Directory />
                 Options FollowSymLinks
                 AllowOverride All
