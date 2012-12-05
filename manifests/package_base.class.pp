@@ -12,7 +12,6 @@ class package_base
   {
     'htop':
       ensure  => present,
-      require => Exec['init']
   }
 
   package
