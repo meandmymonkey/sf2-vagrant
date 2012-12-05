@@ -16,7 +16,6 @@ Vagrant::Config.run do |config|
 
     config.vm.share_folder("v-root", "/vagrant", ".", :nfs => true, :create => true)
 
-    config.vm.provision :shell, :inline => "echo 'It works! <?php echo date(DATE_RFC822); ?>' > /vagrant/project/web/index.php"
     # install local composer.phar
     config.vm.provision :shell, :inline => "curl -s http://getcomposer.org/installer | php"
     # provides global composer.phar
