@@ -1,8 +1,7 @@
 
 Vagrant::Config.run do |config|
 
-  config.vm.box = "lucid32"
-  # config.vm.network(:hostonly, :dhcp, :ip => "33.33.33.10")
+  config.vm.box = "precise64"
   config.vm.network :hostonly, "33.33.33.100"
   # remove the next line when running on a windows host system (Windows does not have NFS support)
   config.vm.share_folder("v-root", "/vagrant", ".", :nfs => true)
