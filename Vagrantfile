@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant::Config.run do |config|
-
+  config.vm.customize ["modifyvm", :id, "--memory", 1024]
   config.vm.box = "precise64"
   config.vm.network :hostonly, "33.33.33.100"
   # remove the next line when running on a windows host system (Windows does not have NFS support)
