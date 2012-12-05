@@ -4,7 +4,9 @@ import 'package_dev_tools.class.pp'
 import 'package_app_server.class.pp'
 import 'config_app_server.class.pp'
 
-Class['package_base']->Class['package_dev_tools']->Class['package_app_server']->Class['config_app_server']
+Exec { path => '/usr/bin:/bin:/usr/sbin:/sbin' }
+
+Class['package_base']->Class['package_app_server']->Class['package_dev_tools']->Class['config_app_server']
 
 service
 {

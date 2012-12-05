@@ -6,7 +6,6 @@ class package_base
   {
     'init':
       command => 'apt-get update',
-      path    => '/usr/bin/'
   }
 
   package

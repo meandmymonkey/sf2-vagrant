@@ -110,7 +110,6 @@ class package_app_server
   exec
   {
     'pear.upgrade.pear':
-      path => '/bin:/usr/bin:/usr/sbin',
       command => 'pear channel-update pear.php.net',
       require => File['pear.tmpdirfix']
   }

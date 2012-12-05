@@ -15,9 +15,4 @@ Vagrant::Config.run do |config|
     end
 
     config.vm.share_folder("v-root", "/vagrant", ".", :nfs => true, :create => true)
-
-    # install local composer.phar
-    config.vm.provision :shell, :inline => "curl -s http://getcomposer.org/installer | php"
-    # provides global composer.phar
-    config.vm.provision :shell, :inline => "mv ./composer.phar /usr/bin/composer.phar"
 end

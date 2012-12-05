@@ -28,10 +28,17 @@ class package_dev_tools
       ensure  => present
   }
 
-  package
+  exec
   {
-    'phpunit':
-      ensure  => present,
-      require => Package['php5']
+    'composer.phar.local':
+      command => 'curl -s http://getcomposer.org/installer | php',
+      require => Package['curl', 'php5']
+  }
+
+  exec
+  {
+    'composer.phar.global':
+      command => 'mv ./composer.phar /usr/bin/composer.phar',
+      require => Exec['composer.phar.local']
   }
 }

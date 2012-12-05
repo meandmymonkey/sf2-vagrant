@@ -13,7 +13,6 @@ class config_app_server
   exec
   {
 	'apache2.mods':
-      path => '/bin:/usr/bin:/usr/sbin',
       command => 'a2enmod rewrite',
       require => File['apache2.config']
   }
@@ -56,7 +55,6 @@ class config_app_server
   {
 	'mysql.password':
       unless => 'mysqladmin -uroot -proot status',
-      path => '/bin:/usr/bin',
       command => 'mysqladmin -uroot password root'
   }
 
