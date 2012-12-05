@@ -9,5 +9,7 @@ Vagrant::Config.run do |config|
     puppet.manifests_path = "manifests"
     puppet.manifest_file = "app.pp"
   end
-  
+
+  config.vm.provision :shell, :inline => "echo 'It works! <?php echo date(DATE_RFC822); ?>' > /vagrant/project/web/index.php"
+
 end
