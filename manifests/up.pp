@@ -12,8 +12,8 @@ exec { 'apt-get update':
   command => 'apt-get update',
 }
 
+# run apt-get update before any package install
 Exec['apt-get update'] -> Class['server']
-Class['server_config'] -> Class['server']
 Exec['apt-get update'] -> Class['developer']
 
 class {'server':}

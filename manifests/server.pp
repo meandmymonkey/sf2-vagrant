@@ -17,9 +17,9 @@ class server {
   }
 
   service { 'apache2':
-    ensure => running,
-    enable => true,
-    subscribe => File['apache2.config']
+    ensure  => running,
+    enable  => true,
+    require => Package['apache2']
   }
 
   package { 'php5':
