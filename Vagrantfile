@@ -11,7 +11,7 @@ Vagrant::Config.run do |config|
 
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "manifests"
-    puppet.manifest_file = "init.pp"
+    puppet.manifest_file = "up.pp"
   end
 
   config.vm.share_folder("v-root", "/vagrant", ".", :nfs => true, :create => true)
